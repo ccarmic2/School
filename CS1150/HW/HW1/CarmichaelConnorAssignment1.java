@@ -4,18 +4,23 @@
  > Due: Jan 26, 2022
  > Assignment: #1
  > Description:
- > This Program will
+ > This Program will print out a couple paragraphs that describe my passions, and
+ > print out a table of calculation for the surface area and volume for a sphere,
+ > cylinder, and cone. All of the answers will be calcuated in the program.
  */
 
 public class CarmichaelConnorAssignment1 {
   public static void main(String[] args) {
 
-    //declaring constants
+    //Declaring Constants for the Sphere, Cone, and Cylinder Calculations
     final double pi = 3.14;
     final double radius = 2;
     final double height = 3;
+    final double side = Math.sqrt(Math.pow(radius, 2) + Math.pow(height, 2));
+
 
 //----------------------------------------------------------------------------------------------------
+//Begin Paragraphs About Me
     // Paragraph #1
     System.out.println("    Hey I'm Connor. I am currently working on my degree for Computer");
     System.out.println("Science. I guess I've been passionate about computers for a while.");
@@ -32,33 +37,38 @@ public class CarmichaelConnorAssignment1 {
     System.out.println("interfacing with it now. \n \n"); //end Paragraph and create 2 new lines
 //----------------------------------------------------------------------------------------------------
 
-    //begin calculation table
-    System.out.println("--------------------------------------------");
+//Begin Calculation Table
+    //Calculation Table Titles
+    System.out.println("----------------------------------------------------------");
     System.out.println("Calculate Volume and Surface Area");
     System.out.println("pi = 3.14    radius = 2    height = 3");
-    System.out.println("--------------------------------------------");
-    System.out.println("Shape   |    Volume   |   Surface Area");
-    System.out.println("--------------------------------------------");
+    System.out.println("----------------------------------------------------------");
+    System.out.println("Shape     |            Volume            |   Surface Area");
+    System.out.println("----------------------------------------------------------");
 
+//Begin Calculations
     //Calculations for Sphere
-    System.out.print("Sphere |      ");
+    System.out.print("Sphere    | ");
       //Sphere Volume
-    System.out.print(4/3f * pi * radius * radius * radius); System.out.print(" | ");
-      //Sphere Surface area
-    System.out.print(4 * pi * radius * radius); System.out.print("\n");
+    System.out.print(4/3f * pi * Math.pow(radius, 3)); System.out.print("  | ");
+      //Sphere Surface area and using "\n" to create a new line
+    System.out.print(4 * pi * Math.pow(radius, 2)); System.out.print("\n");
+
 
     //Calculations for Cylinder
-    System.out.print("Cylinder |   ");
-      //Cylinder Volume
-    System.out.print(pi * radius * radius * height); System.out.print(" | ");
+    System.out.print("Cylinder | ");
+      //Cylinder Volume and spacing out the divider so it lines up with the Surface Area column
+    System.out.print(pi * Math.pow(radius, 2) * height); System.out.print("                          | ");
       //Cylinder Surface area
-    System.out.print((2 * pi * radius * radius) + (2 * pi * radius * height)); System.out.print("\n");
+    System.out.print((2 * pi * Math.pow(radius, 2)) + (2 * pi * radius * height)); System.out.print("\n");
+
 
     //Calculations for Cone
-    System.out.print("Cylinder |   ");
+    System.out.print("Cone       | ");
       //Cone Volume
-    System.out.print(1/3f * pi * radius * radius * height); System.out.print(" | ");
-      //Cone Surface area
-    System.out.print((2 * pi * radius * radius) + (2 * pi * radius * height));
+    System.out.print(1/3f * pi * Math.pow(radius, 2) * height); System.out.print(" | ");
+      //Cone Surface Area
+    System.out.print((pi * radius * side) + (pi * Math.pow(radius, 2))); System.out.print("\n");
+
   }//main method
 }//CarmichaelConnorAssignment1 class
