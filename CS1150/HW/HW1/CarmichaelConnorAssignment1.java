@@ -1,7 +1,7 @@
 /*
  > Name: Connor Carmichael
  > Class: CS1150 (M/W)
- > Due: Jan 2, 2020
+ > Due: Jan 26, 2020
  > Assignment: #1
  > Description:
  > This Program will
@@ -9,7 +9,7 @@
 
 public class CarmichaelConnorAssignment1 {
   public static void main(String[] args) {
-    
+
     //declaring constants
     final double pi = 3.14;
     final double radius = 2;
