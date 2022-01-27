@@ -5,7 +5,7 @@
  > Assignment: #1
  > Description:
  > This Program will print out a couple paragraphs that describe my passions, and
- > print out a table of calculation for the surface area and volume for a sphere,
+ > print out a table of calculations for the surface area and volume for a sphere,
  > cylinder, and cone. All of the answers will be calcuated in the program.
  */
 
@@ -39,34 +39,34 @@ public class CarmichaelConnorAssignment1 {
 
 //Begin Calculation Table
     //Calculation Table Titles
-    System.out.println("----------------------------------------------------------");
-    System.out.println("Calculate Volume and Surface Area");
-    System.out.println("pi = 3.14    radius = 2    height = 3");
-    System.out.println("----------------------------------------------------------");
-    System.out.println("Shape     |            Volume            |   Surface Area");
-    System.out.println("----------------------------------------------------------");
+    System.out.println("------------------------------------------------------");
+    System.out.println("          Calculate Volume and Surface Area");
+    System.out.println("        pi = 3.14    radius = 2    height = 3");
+    System.out.println("------------------------------------------------------");
+    System.out.println("  Shape   |        Volume        |    Surface Area");
+    System.out.println("------------------------------------------------------");
 
 //Begin Calculations
     //Calculations for Sphere
-    System.out.print("Sphere    | ");
+    System.out.print("  Sphere  | ");
       //Sphere Volume
-    System.out.print(4/3f * pi * Math.pow(radius, 3)); System.out.print("  | ");
+    System.out.print(4/3f * pi * Math.pow(radius, 3)); System.out.print("    | ");
       //Sphere Surface area and using "\n" to create a new line
     System.out.print(4 * pi * Math.pow(radius, 2)); System.out.print("\n");
 
 
     //Calculations for Cylinder
-    System.out.print("Cylinder | ");
+    System.out.print(" Cylinder | ");
       //Cylinder Volume and spacing out the divider so it lines up with the Surface Area column
-    System.out.print(pi * Math.pow(radius, 2) * height); System.out.print("                          | ");
+    System.out.print(pi * Math.pow(radius, 2) * height); System.out.print("                | ");
       //Cylinder Surface area
     System.out.print((2 * pi * Math.pow(radius, 2)) + (2 * pi * radius * height)); System.out.print("\n");
 
 
     //Calculations for Cone
-    System.out.print("Cone       | ");
+    System.out.print("   Cone   | ");
       //Cone Volume
-    System.out.print(1/3f * pi * Math.pow(radius, 2) * height); System.out.print(" | ");
+    System.out.print(1/3f * pi * Math.pow(radius, 2) * height); System.out.print("    | ");
       //Cone Surface Area
     System.out.print((pi * radius * side) + (pi * Math.pow(radius, 2))); System.out.print("\n");
 
