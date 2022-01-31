@@ -60,7 +60,7 @@ public class CarmichaelConnorAssignment2 {
     System.out.printf("%36s%s%n","Student: ",name);
     System.out.printf("%40s%2.2f%s%n","Final Grade: ",finalGrade,"%");
     System.out.printf("%s%n"," |----------------------------------------------------------------------|");
-    System.out.printf("%s%n"," |//////////////////////////////////////////////////////////////////////|");   
+    System.out.printf("%s%n"," |//////////////////////////////////////////////////////////////////////|");
     System.out.printf("%s%n"," |----------------------------------------------------------------------|");
 //------------------------------------------------------------------------------
 //Print out Grading Scale and Weighted Catagories
