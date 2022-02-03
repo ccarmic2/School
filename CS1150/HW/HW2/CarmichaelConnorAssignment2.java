@@ -12,15 +12,16 @@ import java.util.Scanner;
 
 public class CarmichaelConnorAssignment2 {
   public static void main(String[] args) {
-//Calling the Scanner Class and Creating a Scanner object
+//Creating a new Scanner object
     Scanner input = new Scanner(System.in);
 
 //Weight constants for corresponding grades (Learning Activites, Homework [HW], Quizzes, Midterms, and Final Exam)
-    final double weightActivities = 0.1;
-    final double weightHW = 0.4;
-    final double weightQuiz = 0.1;
-    final double weightMidterm = 0.2;
-    final double weightFinalExam = 0.2;
+//and var for letter grade
+    final double WEIGHTACTIVITIES = 0.1;
+    final double WEIGHTHW = 0.4;
+    final double WEIGHTQUIZ = 0.1;
+    final double WEIGHTMIDTERM = 0.2;
+    final double WEIGHTFINALEXAM = 0.2;
     String letterGrade = "A";
 
 //------------------------------------------------------------------------------
@@ -54,7 +55,7 @@ public class CarmichaelConnorAssignment2 {
 
 //-------------------------------------------------------------------------------
 //Compute Final Grade and Set the letter grade
-    double finalGrade = (gradeActivities*weightActivities)+(gradeHW*weightHW)+(gradeQuiz*weightQuiz)+(gradeMidterm*weightMidterm)+(gradeFinalExam*weightFinalExam);
+    double finalGrade = (gradeActivities*WEIGHTACTIVITIES)+(gradeHW*WEIGHTHW)+(gradeQuiz*WEIGHTQUIZ)+(gradeMidterm*WEIGHTMIDTERM)+(gradeFinalExam*WEIGHTFINALEXAM);
     //very ugly if else tower
     if (finalGrade >= 94){
       letterGrade = "A";
