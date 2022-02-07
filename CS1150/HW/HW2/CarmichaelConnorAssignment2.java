@@ -16,7 +16,7 @@ public class CarmichaelConnorAssignment2 {
     Scanner input = new Scanner(System.in);
 
 //Weight constants for corresponding grades (Learning Activites, Homework [HW], Quizzes, Midterms, and Final Exam)
-//and var for letter grade
+//and a var for letter grade
     final double WEIGHTACTIVITIES = 0.1;
     final double WEIGHTHW = 0.4;
     final double WEIGHTQUIZ = 0.1;
@@ -36,7 +36,7 @@ public class CarmichaelConnorAssignment2 {
     System.out.printf("%26s","Enter Student's Name: ");
       String name = input.nextLine();
 
-      //Grades prompts and Decarling Grade Catagory Variables
+      //Grade prompts and Decarling Grade Catagory Variables
     System.out.printf("%37s","Enter Learning Activities Grade: ");
       double gradeActivities = input.nextDouble();
 
@@ -56,7 +56,8 @@ public class CarmichaelConnorAssignment2 {
 //-------------------------------------------------------------------------------
 //Compute Final Grade and Set the letter grade
     double finalGrade = (gradeActivities*WEIGHTACTIVITIES)+(gradeHW*WEIGHTHW)+(gradeQuiz*WEIGHTQUIZ)+(gradeMidterm*WEIGHTMIDTERM)+(gradeFinalExam*WEIGHTFINALEXAM);
-    //very ugly if else tower
+    //if else tower to see which letter their grade corresponds to
+    
     if (finalGrade >= 94){
       letterGrade = "A";
     }else if (finalGrade >= 90){
