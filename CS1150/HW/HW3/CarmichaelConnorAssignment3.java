@@ -1,7 +1,7 @@
 /*
  > Name: Connor Carmichael
  > Class: CS1150 (M/W)
- > Due: Feb 2, 2022
+ > Due: Feb 10, 2022
  > Assignment: #3
  > Description:
  > This program will ask for student name and their grades, and
@@ -44,36 +44,42 @@ public class CarmichaelConnorAssignment3 {
     String name = input.nextLine();
 
       //Grade prompts and Decarling Grade Catagory Variables
-        //Learning Activites Grade
+        //Learning Activites Grade prompt
     System.out.printf("%37s","Enter Learning Activities Grade: ");
     gradeActivities = input.nextDouble();
 
+        //HW Grades prompt
     if (gradeActivities>=0 && gradeActivities<=100){
 
       System.out.printf("%26s","Enter Homework Grade: ");
       gradeHW = input.nextDouble();
 
+        //Quiz Grade prompt
         if (gradeHW>=0 && gradeHW<=100){
 
           System.out.printf("%22s","Enter Quiz Grade: ");
           gradeQuiz = input.nextDouble();
 
+        //Midterm Grad prompt
             if (gradeQuiz>=0 && gradeQuiz<=100){
 
               System.out.printf("%26s","Enter Mid-Term Grade: ");
               gradeMidterm = input.nextDouble();
 
+        //Final Exam Grade prompt
                 if (gradeMidterm >=0 && gradeMidterm<=100){
 
                   System.out.printf("%28s","Enter Final Exam Grade: ");
                   gradeFinalExam = input.nextDouble();
                   System.out.printf("%n%n"," ");
 
+        //Check Final Exam input and do remaining tasks
                     if (gradeFinalExam>=0 && gradeFinalExam<=100){
-    //-------------------------------------------------------------------------------
-    //Compute Final Grade and Set the letter grade
+
+//-------------------------------------------------------------------------------
+//Compute Final Grade and Set the letter grade
     double finalGrade = (gradeActivities*WEIGHTACTIVITIES)+(gradeHW*WEIGHTHW)+(gradeQuiz*WEIGHTQUIZ)+(gradeMidterm*WEIGHTMIDTERM)+(gradeFinalExam*WEIGHTFINALEXAM);
-    //if else tower to see which letter their grade corresponds to
+ //if else tower to see which letter their grade corresponds to
     if (finalGrade >= 94){
       letterGrade = "A";
     }else if (finalGrade >= 90){
@@ -99,19 +105,20 @@ public class CarmichaelConnorAssignment3 {
     }else{
       letterGrade = "F";
     }
-    //print out final grade and name
+
+  //print out final grade and name
     System.out.printf("%s%n"," |----------------------------------------------------------------------|");
     System.out.printf("%36s%s%n","Student: ",name);
     System.out.printf("%40s%2.2f%s%3s%n","Final Grade: ",finalGrade,"%",letterGrade);
     System.out.printf("%s%n"," |----------------------------------------------------------------------|");
     System.out.printf("%s%n"," |//////////////////////////////////////////////////////////////////////|");
     System.out.printf("%s%n"," |----------------------------------------------------------------------|");
-    //------------------------------------------------------------------------------
-    //Print out Grading Scale and Weighted Catagories
-    //Titles
+//------------------------------------------------------------------------------
+ //Print out Grading Scale and Weighted Catagories
+ //Titles
     System.out.printf("%-4s%-18s%-10s%4s%12s%20s%4s %n"," |"," Letter Grade","Percentage ","|","Catagory ","Weight","|");
     System.out.printf("%s%n"," |----------------------------------------------------------------------|");
-    //The Grading Scale and Grading Weights data
+  //The Grading Scale and Grading Weights data
     System.out.printf("%-4s%-18s%-10s%5s%23s%6s%7s %n"," |"," A ","94+    ","|","Learning Activites: ","10%","|");
     System.out.printf("%-4s%-18s%-10s%5s%13s%16s%7s %n"," |"," A-","93-90 ","|","Homwork:  ",          "40%","|");
     System.out.printf("%-4s%-18s%-10s%5s%13s%16s%7s %n"," |"," B+","89-87 ","|","Quizzes:  ",          "10%","|");
@@ -128,6 +135,7 @@ public class CarmichaelConnorAssignment3 {
     System.out.printf("%s%n"," |----------------------------------------------------------------------|");
     System.out.printf("%s%n"," |----------------------------------------------------------------------|");
 
+  //Print Error Messages
                     }else {
                       System.out.printf("%s%n","!!Error: Not a vaild input for Final Exam Grade (needs to be between 0 and 100)!!");
                     }
