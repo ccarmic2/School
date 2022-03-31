@@ -34,6 +34,9 @@ public class CarmichaelConnorHW06 {
     System.out.println("   Enter 10 Student Grades (must be between 0-100)");
     enterExamGrades(grades, input);
     System.out.println();
+    System.out.println("   |----------------------------------------------------------------|");
+    System.out.println("   |////////////////////////////////////////////////////////////////|");
+    System.out.println("   |----------------------------------------------------------------|");
     System.out.println();
 
 //get and print highestGrade
@@ -44,9 +47,7 @@ public class CarmichaelConnorHW06 {
     System.out.println("   Average Grade is: "+gradeAvg);
 
     System.out.println();
-    System.out.println("   |----------------------------------------------------------------|");
-    System.out.println("   |////////////////////////////////////////////////////////////////|");
-    System.out.println("   |----------------------------------------------------------------|");
+    System.out.println("   ------------------------------------------------------------------");
     System.out.println();
 
 //assign letter grades to each student according to curve and print out a table
@@ -57,6 +58,8 @@ public class CarmichaelConnorHW06 {
     System.out.println("   ------------------------------------------------------------------");
     System.out.println();
     displayNumberOfLetterGrades(letterGrades);
+
+    input.close();
   }
 
   public static void enterExamGrades (int[] grades, Scanner input){
