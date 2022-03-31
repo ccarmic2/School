@@ -9,8 +9,8 @@
  > based on the grading scale. It will then print out a table of the students grades
  > and letter grades as well as print how many of each letter grades there are.
  */
-import java.util.Scanner;
 
+import java.util.Scanner;
 public class CarmichaelConnorHW06 {
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
@@ -53,10 +53,10 @@ public class CarmichaelConnorHW06 {
 //of each students grade and number of each letter grade
     computeLetterGrades(grades, letterGrades, highestGrade);
     displayGrades(grades, letterGrades);
+    System.out.println();
     System.out.println("   ------------------------------------------------------------------");
+    System.out.println();
     displayNumberOfLetterGrades(letterGrades);
-
-
   }
 
   public static void enterExamGrades (int[] grades, Scanner input){
