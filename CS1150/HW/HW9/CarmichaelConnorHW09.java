@@ -1,5 +1,18 @@
+/*
+ > Name: Connor Carmichael
+ > Class: CS1150 (M/W)
+ > Due: April 25, 2022
+ > Assignment: #9
+ > Description:
+ > This program will start a race between 6 cars, find the winner, and print the
+ > results in the console and a text file.
+ */
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
+
 public class CarmichaelConnorHW09{
-  public static void main(String[] args) {
+  public static void main(String[] args) throws IOException{
     final int    MAX_MILES     = 500;
     final int    NUM_OF_CARS   = 6;
     final double TIME_INTERVAL = 0.25;
@@ -24,7 +37,12 @@ public class CarmichaelConnorHW09{
  //print winner
     System.out.println(" The winner is: " + raceCars[winner].getDriver() + " with " +
                         raceCars[winner].getOdometer() + " miles");
-  }
+
+ //write Race Car Details To a Text File
+    writeRaceCarDetailsToFile(raceCars);
+
+  }//main
+
 
   public static void printRaceCars (RaceCar[] raceCars){
     System.out.printf("-------------------------------------------------\n");
@@ -39,7 +57,7 @@ public class CarmichaelConnorHW09{
     }
 
     System.out.println();
-  }
+  }//printRaceCars
 
   public static void creatRaceCars(RaceCar[] raceCars){
     raceCars[0] = new RaceCar("Shrek", 63, 75);
@@ -48,7 +66,7 @@ public class CarmichaelConnorHW09{
     raceCars[3] = new RaceCar("Dragon", 24, 118);
     raceCars[4] = new RaceCar("Farquaad", 44, 109);
     raceCars[5] = new RaceCar("Pinocchio", 8, 87);
-  }
+  }//creatRaceCars
 
   public static void startRace (RaceCar[] raceCars, double timeInterval, int maxMiles){
     double  time    = 0;
@@ -71,7 +89,7 @@ public class CarmichaelConnorHW09{
         }
       }
     }
-  }
+  }//startRace
 
   public static int findWinner (RaceCar[] raceCars, double maxMiles){
     int winnerIndex = 0;
@@ -83,13 +101,28 @@ public class CarmichaelConnorHW09{
       }
     }
     return winnerIndex;
-  }
+  }//findWinner
 
-  public static void writeRaceCarDetailsToFile(RaceCar[] raceCars){
+  public static void writeRaceCarDetailsToFile(RaceCar[] raceCars) throws IOException{
+    File fileName = new File("RaceCarDetails.txt");
+    PrintWriter detailsFile = new PrintWriter(fileName);
+    detailsFile.printf("-------------------------------------------------\n");
+    detailsFile.printf("%9s%10s%14s%11s%n", "Race Car", "Driver", "Average", "Miles");
+    detailsFile.printf("%31s%17s%n", "Speed", "Completed");
+    detailsFile.println();
+    detailsFile.printf("-------------------------------------------------\n");
 
-  }
+    for (int i = 0; i < raceCars.length; i++){
+      detailsFile.printf("%s%-12d%-13s%-13.2f%.2f%n", " ", raceCars[i].getNumber(),
+      raceCars[i].getDriver(), raceCars[i].getAverageSpeed(), raceCars[i].getOdometer());
+    }
+		detailsFile.close();
 
-}
+		System.out.println(" Find the file here " + fileName.getAbsolutePath());
+  }//writeRaceCarDetailsToFile
+
+}//CarmichaelConnorHW09
+
 
 class RaceCar {
   private String driver;
@@ -98,10 +131,10 @@ class RaceCar {
   private Odometer odometer;
 
   public RaceCar(String driver, int number, int averageSpeed){
-    this.driver = driver;
-    this.number = number;
+    this.driver       = driver;
+    this.number       = number;
     this.averageSpeed = averageSpeed;
-    odometer = new Odometer();
+    odometer          = new Odometer();
   }
 
   public String getDriver (){
@@ -123,7 +156,8 @@ class RaceCar {
   public void updateOdometer(){
     odometer.incrementMiles(averageSpeed);
   }
-}
+}//RaceCar
+
 
 class Odometer {
   private double miles;
@@ -139,4 +173,4 @@ class Odometer {
   public void incrementMiles(double milesTraveled){
     miles += milesTraveled;
   }
-}
+}//Odometer
